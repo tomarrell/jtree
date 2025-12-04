@@ -43,6 +43,7 @@ brews:
   - repository:
       owner: tomarrell
       name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
     homepage: "https://github.com/tomarrell/jtree"
     description: "Display Jaeger traces as a hierarchical tree in your terminal"
     license: "MIT"
