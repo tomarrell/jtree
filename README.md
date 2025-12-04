@@ -5,9 +5,16 @@ Display Jaeger traces as a hierarchical tree in your terminal. The compact outpu
 ## 🚀 Usage
 
 ```bash
+# Basic usage
 jtree <trace-id>
+
+# Pass a full Jaeger URL directly
 jtree http://localhost:16686/trace/abc123def456
+
+# Filter to slow error spans
 jtree -min-duration 100ms -error <trace-id>
+
+# Verbose JSON output with all tags
 jtree -json <trace-id>
 ```
 
