@@ -12,6 +12,8 @@ import (
 	"time"
 )
 
+var version = "dev"
+
 type config struct {
 	jaegerURL    string
 	jsonOutput   bool
@@ -103,7 +105,9 @@ func (n *spanNode) hasError() bool {
 
 func main() {
 	cfg := &config{jaegerURL: "http://localhost:16686"}
+	showVersion := false
 
+	flag.BoolVar(&showVersion, "version", false, "print version and exit")
 	flag.StringVar(&cfg.jaegerURL, "url", cfg.jaegerURL, "Jaeger URL")
 	flag.BoolVar(&cfg.jsonOutput, "json", false, "output verbose JSON with all tags")
 	flag.DurationVar(
@@ -133,6 +137,11 @@ Flags:
 		flag.PrintDefaults()
 	}
 	flag.Parse()
+
+	if showVersion {
+		fmt.Println(version)
+		os.Exit(0)
+	}
 
 	if flag.NArg() < 1 {
 		flag.Usage()
