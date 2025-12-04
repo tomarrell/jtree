@@ -1,8 +1,8 @@
-# jtree
+# 🌲 jtree
 
 Display Jaeger traces as a hierarchical tree in your terminal.
 
-## Usage
+## 🚀 Usage
 
 ```bash
 # Basic usage - human readable output
@@ -33,7 +33,7 @@ jtree -relative <trace-id>
 jtree -min-duration 1s -depth 2 -relative <trace-id>
 ```
 
-## Output
+## 📋 Output
 
 Default human-readable format:
 ```
@@ -56,7 +56,7 @@ JSON format (`-json`):
 call-abc123 {"duration":"55.47s","service":"orchestrator","span_id":"f1f173a9f8639951","tags":{...}}
 ```
 
-## Installation
+## 📦 Installation
 
 ### Homebrew (macOS/Linux)
 
@@ -74,7 +74,7 @@ go install github.com/tomarrell/jtree@latest
 
 Download the latest binary from the [releases page](https://github.com/tomarrell/jtree/releases).
 
-## Flags
+## 🎛️ Flags
 
 | Flag | Default | Description |
 |------|---------|-------------|
@@ -85,7 +85,8 @@ Download the latest binary from the [releases page](https://github.com/tomarrell
 | `-service` | | Only show spans from this service |
 | `-depth` | `0` | Limit tree depth (0 = unlimited) |
 | `-relative` | `false` | Show timestamps relative to trace start |
+| `-version` | `false` | Print version and exit |
 
-## License
+## 📄 License
 
 MIT
