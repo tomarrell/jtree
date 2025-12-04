@@ -2,24 +2,6 @@
 
 Display Jaeger traces as a hierarchical tree in your terminal.
 
-## Installation
-
-### Homebrew (macOS/Linux)
-
-```bash
-brew install tomarrell/tap/jtree
-```
-
-### Go
-
-```bash
-go install github.com/tomarrell/jtree@latest
-```
-
-### Binary
-
-Download the latest binary from the [releases page](https://github.com/tomarrell/jtree/releases).
-
 ## Usage
 
 ```bash
@@ -73,6 +55,24 @@ JSON format (`-json`):
 ```
 call-abc123 {"duration":"55.47s","service":"orchestrator","span_id":"f1f173a9f8639951","tags":{...}}
 ```
+
+## Installation
+
+### Homebrew (macOS/Linux)
+
+```bash
+brew install tomarrell/tap/jtree
+```
+
+### Go
+
+```bash
+go install github.com/tomarrell/jtree@latest
+```
+
+### Binary
+
+Download the latest binary from the [releases page](https://github.com/tomarrell/jtree/releases).
 
 ## Flags
 
