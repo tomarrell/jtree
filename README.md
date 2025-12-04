@@ -1,6 +1,6 @@
 # 🌲 jtree
 
-Display Jaeger traces as a hierarchical tree in your terminal.
+Display Jaeger traces as a hierarchical tree in your terminal. The compact output is ideal for piping to LLM CLI agents, enabling AI-assisted trace analysis without overwhelming context.
 
 ## 🚀 Usage
 
