@@ -5,32 +5,19 @@ Display Jaeger traces as a hierarchical tree in your terminal. The compact outpu
 ## 🚀 Usage
 
 ```bash
-# Basic usage - human readable output
 jtree <trace-id>
-
-# Pass a full Jaeger URL directly
 jtree http://localhost:16686/trace/abc123def456
-
-# Verbose JSON output with all tags
+jtree -min-duration 100ms -error <trace-id>
 jtree -json <trace-id>
+```
 
-# Filter to slow spans (>= 100ms)
-jtree -min-duration 100ms <trace-id>
+## 🤖 LLM Integration
 
-# Show only error spans
-jtree -error <trace-id>
+Pipe trace data directly to LLM CLI agents for AI-assisted debugging:
 
-# Filter by service
-jtree -service orchestrator <trace-id>
-
-# Limit tree depth
-jtree -depth 3 <trace-id>
-
-# Show relative timestamps
-jtree -relative <trace-id>
-
-# Combine filters
-jtree -min-duration 1s -depth 2 -relative <trace-id>
+```bash
+jtree abc123 | claude "What's causing the latency in this trace?"
+jtree -error abc123 | claude "Explain these errors and suggest fixes"
 ```
 
 ## 📋 Output
@@ -55,23 +42,6 @@ JSON format (`-json`):
 ```
 call-abc123 {"duration":"55.47s","service":"orchestrator","span_id":"f1f173a9f8639951","tags":{...}}
 ```
-
-## 🤖 LLM Integration
-
-jtree's compact tree output is ideal for passing to LLM CLI agents. Instead of overwhelming context with raw Jaeger JSON or screenshots of the UI, pipe trace data directly:
-
-```bash
-# Pass trace to Claude Code
-jtree abc123 | claude "What's causing the latency in this trace?"
-
-# Debug errors with context
-jtree -error abc123 | claude "Explain these errors and suggest fixes"
-
-# Analyze slow spans
-jtree -min-duration 500ms abc123 | claude "Why are these spans slow?"
-```
-
-The hierarchical format preserves parent-child relationships while staying token-efficient, making it easy for LLMs to understand the request flow and identify issues.
 
 ## 📦 Installation
 
