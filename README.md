@@ -2,7 +2,7 @@
 
 Display Jaeger traces as a hierarchical tree in your terminal. The compact output is ideal for piping to LLM CLI agents, enabling AI-assisted trace analysis without overwhelming context.
 
-## 🚀 Usage
+## Usage
 
 ```bash
 # Basic usage
@@ -18,7 +18,7 @@ jtree -min-duration 100ms -error <trace-id>
 jtree -json <trace-id>
 ```
 
-## 🤖 LLM Integration
+## LLM Integration
 
 Pipe trace data directly to LLM CLI agents for AI-assisted debugging:
 
@@ -27,7 +27,7 @@ jtree abc123 | claude "What's causing the latency in this trace?"
 jtree -error abc123 | claude "Explain these errors and suggest fixes"
 ```
 
-## 📋 Output
+## Output
 
 Default human-readable format:
 ```
@@ -50,7 +50,7 @@ JSON format (`-json`):
 call-abc123 {"duration":"55.47s","service":"orchestrator","span_id":"f1f173a9f8639951","tags":{...}}
 ```
 
-## 📦 Installation
+## Installation
 
 ### Homebrew (macOS/Linux)
 
@@ -68,7 +68,7 @@ go install github.com/tomarrell/jtree@latest
 
 Download the latest binary from the [releases page](https://github.com/tomarrell/jtree/releases).
 
-## 🎛️ Flags
+## Flags
 
 | Flag | Default | Description |
 |------|---------|-------------|
@@ -81,6 +81,6 @@ Download the latest binary from the [releases page](https://github.com/tomarrell
 | `-relative` | `false` | Show timestamps relative to trace start |
 | `-version` | `false` | Print version and exit |
 
-## 📄 License
+## License
 
 MIT
